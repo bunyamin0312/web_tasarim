@@ -1,0 +1,60 @@
+<h1>Lütfen Formu Eksiksiz Doldurunuz.</h1>
+<hr>
+<form>
+  <h4>Hesap Bilgileriniz</h4>
+  <table>
+    <tr>
+      <td>Kullanıcı Adı:</td>
+      <td><input type="text" name="username" placeholder="Kullanıcı adı giriniz" required></td>
+    </tr>
+    <tr>
+      <td>Eposta:</td>
+      <td><input type="email" name="eposta" placeholder="Eposta giriniz" required></td>
+    </tr>
+    <tr>
+      <td>Parola:</td>
+      <td><input type="password" name="parola" placeholder="Parola giriniz" required></td>
+    </tr>
+  </table>
+
+  <h4>Kişisel Bilgileriniz</h4>
+  <table>
+    <tr>
+      <td>Ad:</td>
+      <td><input type="text" name="ad"></td>
+    </tr>
+    <tr>
+      <td>Soyad:</td>
+      <td><input type="text" name="soyad"></td>
+    </tr>
+    <tr>
+      <td>Şehir:</td>
+      <td>
+        <select name="sehir">
+          <option>Seçiniz</option>
+          <option>Ankara</option>
+          <option>İstanbul</option>
+          <option>Kocaeli</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Cinsiyet:</td>
+      <td>
+        <input type="radio" name="cinsiyet" value="Erkek"> Erkek
+        <input type="radio" name="cinsiyet" value="Kadın"> Kadın
+      </td>
+    </tr>
+    <tr>
+      <td>Hobileriniz:</td>
+      <td>
+        <input type="checkbox" name="hobiler" value="Sinema"> Sinema
+        <input type="checkbox" name="hobiler" value="Gezmek"> Gezmek
+        <input type="checkbox" name="hobiler" value="Spor"> Spor
+        <input type="checkbox" name="hobiler" value="Kitap"> Kitap
+      </td>
+    </tr>
+  </table>
+
+  <input type="submit" value="Kaydet">
+</form>
