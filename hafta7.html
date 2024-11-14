@@ -17,10 +17,10 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 200px 200px; /* Two equal columns */
-            grid-template-rows: 100px 100px 100px 100px; /* Four rows of specified heights */
+            grid-template-columns: 150px 150px 150px; /* Three columns with exact width */
+            grid-template-rows: 70px 100px 70px 100px 100px; /* Rows with specific heights */
             gap: 10px;
-            width: 420px; /* Total width accounting for gap */
+            width: 470px; /* Total width with gaps */
         }
 
         .grid-container > div {
@@ -29,18 +29,18 @@
             align-items: center;
             color: white;
             font-weight: bold;
-            font-size: 1.5em;
+            font-size: 1.2em;
             border-radius: 5px;
         }
 
         /* Assign specific areas and colors to each grid item */
-        .item-a { grid-column: 1 / span 2; background-color: #001f54; }
-        .item-b { background-color: #f29c1f; }
-        .item-c { background-color: #8cbf3f; }
-        .item-d { background-color: #ff1e1e; }
-        .item-e { background-color: #f2c618; }
-        .item-f { background-color: #8e44ad; }
-        .item-g { grid-column: 1 / span 2; background-color: #00af54; }
+        .item-a { grid-column: 1 / span 3; background-color: #001f54; height: 70px; }
+        .item-b { grid-column: 1 / span 1; background-color: #f29c1f; height: 100px; }
+        .item-c { grid-column: 2 / span 1; background-color: #8cbf3f; height: 100px; }
+        .item-d { grid-column: 3 / span 1; background-color: #ff1e1e; height: 100px; }
+        .item-e { grid-column: 1 / span 2; background-color: #f2c618; height: 70px; }
+        .item-f { grid-column: 3 / span 1; background-color: #8e44ad; height: 70px; }
+        .item-g { grid-column: 1 / span 3; background-color: #00af54; height: 100px; }
     </style>
 </head>
 <body>
@@ -55,4 +55,5 @@
     </div>
 </body>
 </html>
+
 
