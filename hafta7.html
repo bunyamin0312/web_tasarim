@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 10px;
+            width: 400px;
+        }
+
+        .grid-container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .item-a { grid-column: 1 / span 2; background-color: #001f54; }
+        .item-b { background-color: #f29c1f; }
+        .item-c { background-color: #8cbf3f; }
+        .item-d { background-color: #ff1e1e; }
+        .item-e { background-color: #f2c618; }
+        .item-f { background-color: #8e44ad; }
+        .item-g { grid-column: 1 / span 2; background-color: #00af54; }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item-a">A</div>
+        <div class="item-b">B</div>
+        <div class="item-c">C</div>
+        <div class="item-d">D</div>
+        <div class="item-e">E</div>
+        <div class="item-f">F</div>
+        <div class="item-g">G</div>
+    </div>
+</body>
+</html>
