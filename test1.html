@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sınavı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-size: 1.1em;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question input {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Programcılığı Testi</h1>
+        <form action="submit_test.php" method="POST">
+            <div class="question">
+                <label for="q1">1. HTML nedir?</label><br>
+                <input type="radio" id="q1a1" name="q1" value="A"> Web sayfası yapma dili<br>
+                <input type="radio" id="q1a2" name="q1" value="B"> Programlama dili<br>
+                <input type="radio" id="q1a3" name="q1" value="C"> Veritabanı yönetim sistemi<br>
+            </div>
+
+            <div class="question">
+                <label for="q2">2. HTML hangi etiketle başlar?</label><br>
+                <input type="radio" id="q2a1" name="q2" value="A"> &lt;html&gt;<br>
+                <input type="radio" id="q2a2" name="q2" value="B"> &lt;head&gt;<br>
+                <input type="radio" id="q2a3" name="q2" value="C"> &lt;body&gt;<br>
+            </div>
+
+            <div class="question">
+                <label for="q3">3. HTML form elemanları hangi etiketle oluşturulur?</label><br>
+                <input type="radio" id="q3a1" name="q3" value="A"> &lt;form&gt;<br>
+                <input type="radio" id="q3a2" name="q3" value="B"> &lt;input&gt;<br>
+                <input type="radio" id="q3a3" name="q3" value="C"> &lt;button&gt;<br>
+            </div>
+
+            <div class="question">
+                <label for="q4">4. Aşağıdaki hangi input türü, çoklu seçim yapılmasına olanak tanır?</label><br>
+                <input type="checkbox" name="q4[]" value="A"> Seçenek 1<br>
+                <input type="checkbox" name="q4[]" value="B"> Seçenek 2<br>
+                <input type="checkbox" name="q4[]" value="C"> Seçenek 3<br>
+            </div>
+
+            <div class="question">
+                <label for="q5">5. Doğum tarihinizi girin:</label><br>
+                <input type="date" id="q5" name="q5"><br>
+            </div>
+
+            <button type="submit">Sınavı Gönder</button>
+        </form>
+    </div>
+</body>
+</html>
