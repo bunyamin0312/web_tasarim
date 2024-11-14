@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ders Programı - Internal CSS</title>
+    <title>Etkinlik Programı - Internal CSS</title>
     <style>
         table {
             width: 100%;
-            border: 1px solid black;
+            border: 2px solid #444;
             border-collapse: collapse;
         }
         th, td {
-            padding: 10px;
+            padding: 15px;
             text-align: center;
+            font-size: 18px;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #f0f0f0;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        tr:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
@@ -25,36 +32,34 @@
         <thead>
             <tr>
                 <th>Saat</th>
-                <th>Pazartesi</th>
-                <th>Salı</th>
-                <th>Çarşamba</th>
-                <th>Perşembe</th>
+                <th>Cumartesi</th>
+                <th>Pazar</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>08:00 - 09:00</td>
-                <td>Matematik</td>
-                <td>Fizik</td>
-                <td>Kimya</td>
-                <td>Biyoloji</td>
-            </tr>
-            <tr>
-                <td>09:00 - 10:00</td>
-                <td>Türkçe</td>
-                <td>Edebiyat</td>
-                <td>Coğrafya</td>
-                <td>Sosyal Bilgiler</td>
-            </tr>
-            <tr>
                 <td>10:00 - 11:00</td>
-                <td>İngilizce</td>
-                <td>Matematik</td>
-                <td>Fizik</td>
-                <td>Kimya</td>
+                <td>Spor Salonu</td>
+                <td>Sinema</td>
+            </tr>
+            <tr>
+                <td>11:00 - 12:00</td>
+                <td>Kahvaltı</td>
+                <td>Alışveriş</td>
+            </tr>
+            <tr>
+                <td>12:00 - 13:00</td>
+                <td>Yürüyüş</td>
+                <td>Kitap Okuma</td>
+            </tr>
+            <tr>
+                <td>13:00 - 14:00</td>
+                <td>Öğle Yemeği</td>
+                <td>Arkadaş Ziyareti</td>
             </tr>
         </tbody>
     </table>
 
 </body>
 </html>
+
