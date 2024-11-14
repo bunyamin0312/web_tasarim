@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animasyon</title>
+<style>
+
+
+  .container {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+    justify-content: center;
+  }
+
+  
+  .animated-div {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .goz {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+  }
+
+  .goz.left {
+    left: 30%;
+  }
+
+  .goz.right {
+    right: 30%;
+  }
+
+  
+  .agiz {
+    width: 45px;
+    height: 25px;
+    background-color: pink;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    top: 55%;
+  }
+
+
+  
+  .up-down {
+    background-color: lime;
+    animation: upDown 2s ease-in-out infinite;
+  }
+
+  @keyframes upDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  
+  .scale-color {
+    background-color: red;
+    animation: scaleColor 3s ease-in-out infinite;
+  }
+
+  @keyframes scaleColor {
+    0%, 100% { transform: scale(1); background-color: red; }
+    50% { transform: scale(1.2); background-color: orange; }
+  }
+
+
+  .fade-in-out {
+    background-color: orange;
+    animation: fadeInOut 4s ease-in-out infinite;
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  
+  .left-right {
+    background-color: black;
+    animation: leftRight 2s ease-in-out infinite;
+  }
+
+  @keyframes leftRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+  }
+
+  
+  .rotate {
+    background-color: brown;
+    animation: rotate 2s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+</style>
+</head>
+<body>
+    
+
+<div class="container">
+  <div class="animated-div up-down">
+    <div class="goz left"></div>
+    <div class="goz right"></div>
+    <div class="agiz"></div>
+  </div>
+  
+  <div class="animated-div scale-color">
+    <div class="goz left"></div>
+    <div class="goz right"></div>
+    <div class="agiz"></div>
+  </div>
+  
+  <div class="animated-div fade-in-out">
+    <div class="goz left"></div>
+    <div class="goz right"></div>
+    <div class="agiz"></div>
+  </div>
+  
+  <div class="animated-div left-right">
+    <div class="goz left"></div>
+    <div class="goz right"></div>
+    <div class="agiz"></div>
+  </div>
+  
+  <div class="animated-div rotate">
+    <div class="goz left"></div>
+    <div class="goz right"></div>
+    <div class="agiz"></div>
+  </div>
+</div>
+
+</body>
+</html>
