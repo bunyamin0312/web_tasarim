@@ -12,14 +12,15 @@
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto;
+            grid-template-columns: 200px 200px; /* Two equal columns */
+            grid-template-rows: 100px 100px 100px 100px; /* Four rows of specified heights */
             gap: 10px;
-            width: 400px;
+            width: 420px; /* Total width accounting for gap */
         }
 
         .grid-container > div {
@@ -29,8 +30,10 @@
             color: white;
             font-weight: bold;
             font-size: 1.5em;
+            border-radius: 5px;
         }
 
+        /* Assign specific areas and colors to each grid item */
         .item-a { grid-column: 1 / span 2; background-color: #001f54; }
         .item-b { background-color: #f29c1f; }
         .item-c { background-color: #8cbf3f; }
@@ -52,3 +55,4 @@
     </div>
 </body>
 </html>
+
