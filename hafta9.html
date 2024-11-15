@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Background and Toggle Images</title>
+  <style>
+    body {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .image-container {
+      margin-top: 20px;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      display: block;
+      margin: 10px auto;
+    }
+    button {
+      display: block;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="image-container">
+  <img id="image1" src="https://via.placeholder.com/200" alt="Image 1">
+  <button onclick="toggleImage('image1')">Show/Hide Image 1</button>
+
+  <img id="image2" src="https://via.placeholder.com/200" alt="Image 2">
+  <button onclick="toggleImage('image2')">Show/Hide Image 2</button>
+
+  <img id="image3" src="https://via.placeholder.com/200" alt="Image 3">
+  <button onclick="toggleImage('image3')">Show/Hide Image 3</button>
+</div>
+
+<script>
+  // Array of background images
+  const backgroundImages = [
+    'https://via.placeholder.com/1920x1080?text=Background1',
+    'https://via.placeholder.com/1920x1080?text=Background2',
+    'https://via.placeholder.com/1920x1080?text=Background3',
+    'https://via.placeholder.com/1920x1080?text=Background4',
+    'https://via.placeholder.com/1920x1080?text=Background5',
+    'https://via.placeholder.com/1920x1080?text=Background6',
+    'https://via.placeholder.com/1920x1080?text=Background7',
+    'https://via.placeholder.com/1920x1080?text=Background8',
+    'https://via.placeholder.com/1920x1080?text=Background9',
+    'https://via.placeholder.com/1920x1080?text=Background10'
+  ];
+
+  // Function to set a random background image on page load
+  function setRandomBackground() {
+    const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+    document.body.style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
+  }
+
+  // Function to toggle the visibility of images
+  function toggleImage(imageId) {
+    const image = document.getElementById(imageId);
+    image.style.display = (image.style.display === 'none') ? 'block' : 'none';
+  }
+
+  // Set random background on page load
+  window.onload = setRandomBackground;
+</script>
+
+</body>
+</html>
