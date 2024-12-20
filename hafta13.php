@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ara'])) {
                 <th>Soyad</th>
                 <th>Email</th>
             </tr>
-            <?php foreach ($sonuclar as $kisi) : ?>
+            <?php foreach ($bunyamin as $bilgiler) : ?>
                 <tr>
                     <td><?= htmlspecialchars($kisi['id']) ?></td>
                     <td><?= htmlspecialchars($kisi['ad']) ?></td>
