@@ -5,12 +5,15 @@ $username = "root";
 $password = "";
 $dbname = "Kisiler";
 
+// Bağlantıyı oluştur
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Bağlantıyı kontrol et
 if ($conn->connect_error) {
     die("Bağlantı başarısız: " . $conn->connect_error);
 }
 
+// Formdan veri eklendiğinde
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ekle'])) {
     $ad = $_POST['ad'];
     $soyad = $_POST['soyad'];
@@ -28,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ekle'])) {
     $stmt->close();
 }
 
+// Formdan arama yapıldığında
 $sonuclar = [];
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ara'])) {
     $arama = $_POST['arama'];
