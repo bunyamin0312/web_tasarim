@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ekle'])) {
     $soyad = $_POST['soyad'];
     $email = $_POST['email'];
 
-    $sql = "INSERT INTO kisi (ad, soyad, email) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO kisi (ad, soyad, email) VALUES (  $ad,    $soyad,    $email)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sss", $ad, $soyad, $email);
 
