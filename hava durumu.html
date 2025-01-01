@@ -1,0 +1,101 @@
+// Importing necessary modules
+import React, { useState } from 'react';
+import axios from 'axios';
+import './App.css'; // Custom CSS for styling
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+function App() {
+  const [city, setCity] = useState('');
+  const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState('');
+
+  const handleFetchWeather = async () => {
+    const apiKey = 'YOUR_API_KEY'; // Replace with your API key
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},TR&units=metric&lang=tr&appid=${apiKey}`;
+
+    try {
+      setError(''); // Reset error
+      const response = await axios.get(apiUrl);
+      setWeatherData(response.data);
+    } catch (err) {
+      setWeatherData(null);
+      setError('Hava durumu bilgisi alınamadı. Lütfen şehir adını kontrol edin.');
+    }
+  };
+
+  const getBackgroundClass = () => {
+    if (!weatherData) return 'default-bg';
+    const temp = weatherData.main.temp;
+    if (temp < 10) return 'cold-bg';
+    if (temp > 25) return 'hot-bg';
+    return 'moderate-bg';
+  };
+
+  return (
+    <div className={`app-container ${getBackgroundClass()}`}>
+      <div className="container p-4">
+        <h1 className="text-center mb-4">Hava Durumu Uygulaması</h1>
+
+        <div className="input-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Şehir adını giriniz"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button className="btn btn-primary" onClick={handleFetchWeather}>
+            Hava Durumunu Getir
+          </button>
+        </div>
+
+        {error && <div className="alert alert-danger">{error}</div>}
+
+        {weatherData && (
+          <div className="weather-info text-center">
+            <h2>{weatherData.name}</h2>
+            <p>Sıcaklık: {weatherData.main.temp}°C</p>
+            <p>Nem: {weatherData.main.humidity}%</p>
+            <p>Rüzgar Hızı: {weatherData.wind.speed} m/s</p>
+            <p>Açıklama: {weatherData.weather[0].description}</p>
+          </div>
+        )}
+
+        <button
+          className="btn btn-info mt-3"
+          onClick={() => alert('Tasarımcı: [Your Name]')}
+        >
+          Hakkında
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+// CSS Styles in App.css
+/*
+.default-bg {
+  background: #f0f0f0;
+}
+
+.cold-bg {
+  background: #89CFF0;
+}
+
+.moderate-bg {
+  background: #FFD700;
+}
+
+.hot-bg {
+  background: #FF4500;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+*/
