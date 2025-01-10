@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Canvas</title>
@@ -11,16 +11,16 @@
         const tuval = document.getElementById('tuval');
         const cizim = tuval.getContext('2d');
 
-        const satirSayisi = 10; // Satır sayısı
-        const sutunSayisi = 10; // Sütun sayısı
-        const yaricap = 20; // Dairelerin yarıçapı
-        const aralik = 50; // Daireler arasındaki mesafe
+        const satirSayisi = 10; // Number of rows
+        const sutunSayisi = 10; // Number of columns
+        const yaricap = 20; // Radius of circles
+        const aralik = 50; // Distance between circles
 
         function rastgeleRenk() {
             const kirmizi = Math.floor(Math.random() * 256);
             const yesil = Math.floor(Math.random() * 256);
             const mavi = Math.floor(Math.random() * 256);
-            return rgb(${kirmizi}, ${yesil}, ${mavi});
+            return `rgb(${kirmizi}, ${yesil}, ${mavi})`; // Use template literals for color
         }
 
         for (let satir = 0; satir < satirSayisi; satir++) {
@@ -29,9 +29,9 @@
                 const merkezY = satir * aralik + yaricap;
 
                 cizim.beginPath();
-                cizim.arc(merkezX, merkezY, yaricap, 0, 2 * Math.PI); // Daireyi çiz
-                cizim.fillStyle = rastgeleRenk(); // Rastgele bir renk seç
-                cizim.fill(); // Daireyi doldur
+                cizim.arc(merkezX, merkezY, yaricap, 0, 2 * Math.PI); // Draw circle
+                cizim.fillStyle = rastgeleRenk(); // Set random color
+                cizim.fill(); // Fill the circle
                 cizim.closePath();
             }
         }
