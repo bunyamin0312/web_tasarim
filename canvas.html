@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="tuval" width="500" height="500" style="border:1px solid black;"></canvas>
+
+    <script>
+        const tuval = document.getElementById('tuval');
+        const cizim = tuval.getContext('2d');
+
+        const satirSayisi = 10; // Satır sayısı
+        const sutunSayisi = 10; // Sütun sayısı
+        const yaricap = 20; // Dairelerin yarıçapı
+        const aralik = 50; // Daireler arasındaki mesafe
+
+        function rastgeleRenk() {
+            const kirmizi = Math.floor(Math.random() * 256);
+            const yesil = Math.floor(Math.random() * 256);
+            const mavi = Math.floor(Math.random() * 256);
+            return rgb(${kirmizi}, ${yesil}, ${mavi});
+        }
+
+        for (let satir = 0; satir < satirSayisi; satir++) {
+            for (let sutun = 0; sutun < sutunSayisi; sutun++) {
+                const merkezX = sutun * aralik + yaricap;
+                const merkezY = satir * aralik + yaricap;
+
+                cizim.beginPath();
+                cizim.arc(merkezX, merkezY, yaricap, 0, 2 * Math.PI); // Daireyi çiz
+                cizim.fillStyle = rastgeleRenk(); // Rastgele bir renk seç
+                cizim.fill(); // Daireyi doldur
+                cizim.closePath();
+            }
+        }
+    </script>
+
+</body>
+</html>
